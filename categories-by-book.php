@@ -1,6 +1,6 @@
 <?php 
 require_once("util-db.php"); 
-require_once("categories-by-book.php");
+require_once("model-categories-by-book.php");
 
 $pageTitle = "Categories by Book";
 include "view-header.php";
