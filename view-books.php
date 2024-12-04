@@ -6,6 +6,7 @@
         <th>ID</th>
         <th>Title</th>
         <th>Publisher</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,12 @@ while ($book = $books->fetch_assoc()) {
     <td> <?php echo $book['book_id']?></td>
     <td> <?php echo $book['book_title']?></td>
     <td> <?php echo $book['book_publisher']?></td>
+    <td>
+          <form method = "post" action = "categories-by-book.php">
+            <input type = "hidden" name = "bid" value = "<?php echo $book['book_id']?>">
+      <button type="submit" class="btn btn-primary">Categories</button>
+    </form>
+    </td>
   </tr>
   <?php
 }
