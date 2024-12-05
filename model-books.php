@@ -32,7 +32,7 @@ function updateBook($bTitle, $bPublisher, $bid) {
   try {
     $conn = get_db_connection();
     $stmt = $conn->prepare("UPDATE `book` set `book_title` = ?, `book_publisher` =?  WHERE book_id = ?");
-    $stmt->bind_param("ssi", $bName, $bPublisher, $bid);
+    $stmt->bind_param("ssi", $bTitle, $bPublisher, $bid);
     $success = $stmt->execute(); 
     $conn->close(); 
     return $success; 
