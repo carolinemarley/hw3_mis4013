@@ -13,12 +13,13 @@ function selectBooks() {
   }
 }
 
-function insertBook($bName, $bPublisher) {
+function insertBook($bTitle, $bPublisher) {
   try {
     $conn = get_db_connection();
     $stmt = $conn->prepare("INSERT INTO `book` (`book_title`, `book_publisher`) VALUES (?, ?)");
-    $stmt->bind_param("ss", $bName, $bPublisher);
+    $stmt->bind_param("ss", $bTitle, $bPublisher);
     $success = $stmt->execute(); 
+    $result = $stmt->get_result(); 
     $conn->close(); 
     return $success; 
   } catch (Exception $e){
@@ -27,11 +28,11 @@ function insertBook($bName, $bPublisher) {
   }
 }
 
-function updateBook($bName, $bPublisher, $bid) {
+function updateBook($bTitle, $bPublisher, $bid) {
   try {
     $conn = get_db_connection();
-    $stmt = $conn->prepare("INSERT INTO `book` (`book_title`, `book_publisher`) VALUES (?, ?)");
-    $stmt->bind_param("ss", $bName, $bPublisher);
+    $stmt = $conn->prepare("UPDATE `book` set `book_title` = ?, `book_publisher` =?  WHERE book_id = ?");
+    $stmt->bind_param("ssi", $bName, $bPublisher, $bid);
     $success = $stmt->execute(); 
     $conn->close(); 
     return $success; 
