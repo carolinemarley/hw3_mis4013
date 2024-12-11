@@ -4,33 +4,28 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
-
 <script>
   const ctx = document.getElementById('myChart');
 
+  // Start PHP block to fetch authors and build data
+  <?php
+  $authors = selectAuthors();
+  $data = [];
+  $labels = [];
+  while ($author = $authors->fetch_assoc()) {
+    $data[] = $author['num_categories'];
+    $labels[] = $author['author_name'];
+  }
+  ?>
+
+  // Create a new chart using the processed PHP arrays
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-    datasets: [{
-        data: [
-<?php
-while ($author = $authors->fetch_assoc()) {
-  echo $author['num_categories'] . ", ";
-}
-?> 
-        ]
-    }],
-
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-<?php
-$authors = selectAuthors(); 
-while ($author = $authors->fetch_assoc()) {
-  echo "'" .$author['author_name'] . "', ";
-}
-?> 
-    ]
-},
+      datasets: [{
+        data: <?php echo json_encode($data); ?>,
+      }],
+      labels: <?php echo json_encode($labels); ?>,
+    },
   });
 </script>
