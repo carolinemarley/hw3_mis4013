@@ -15,7 +15,7 @@
     datasets: [{
         data: [
 <?php
-while ($authors = $author->fetch_assoc()) {
+while ($author = $authors->fetch_assoc()) {
   echo $author['num_categories'] . "', ";
 }
 ?> 
