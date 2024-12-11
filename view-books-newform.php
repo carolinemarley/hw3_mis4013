@@ -18,10 +18,7 @@
         <form method ="post" action = "">
   <div class="mb-3">
     <label for="bTitle" class="form-label">Book Title</label>
-<?php
-$bookList = selectBooksForInput(); 
-include "view-book-input-list.php"; 
-?>
+<input type="text" class="form-control" id = "bTitle" name = "bTitle"> 
   </div>
    <div class="mb-3">
     <label for="bPublisher" class="form-label">Book Publisher</label>
