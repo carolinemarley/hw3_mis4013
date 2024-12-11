@@ -1,8 +1,8 @@
-<select class="form-select" id = "bTitle" name = "bTitle">
+<select class="form-select" id = "bPublisher" name = "bPublisher">
 <?php
 while ($bookItem = $bookList->fetch_assoc()) {
   ?>
-   <option value="<?php echo $bookItem['book_title'];?>"><?php echo $bookItem['book_title'];?></option>
+   <option value="<?php echo $bookItem['book_publisher'];?>"><?php echo $bookItem['book_publisher'];?></option>
   <?php
 }
 ?>
