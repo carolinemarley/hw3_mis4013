@@ -16,7 +16,7 @@ function selectBooks() {
 function selectBooksForInput() {
   try {
     $conn = get_db_connection();
-    $stmt = $conn->prepare("SELECT book_id, book_title FROM `book` order by book_title");
+    $stmt = $conn->prepare("SELECT book_id, book_publisher FROM `book` order by book_publisher");
     $stmt->execute(); 
     $result = $stmt->get_result();
     $conn->close(); 
