@@ -22,7 +22,10 @@
   </div>
    <div class="mb-3">
     <label for="bPublisher" class="form-label">Book Publisher</label>
-    <input type="text" class="form-control" id="bPublisher" name="bPublisher">
+<?php
+$bookList = selectBooksForInput(); 
+include "view-book-input-list.php"; 
+?>
   </div>
               <input type ="hidden" name = "actionType" value="Add">
   <button type="submit" class="btn btn-primary">Save</button>
