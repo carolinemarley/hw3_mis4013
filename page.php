@@ -16,7 +16,7 @@
         data: [
 <?php
 while ($author = $authors->fetch_assoc()) {
-  echo $author['num_categories'] . "', ";
+  echo $author['num_categories'] . ", ";
 }
 ?> 
         ]
