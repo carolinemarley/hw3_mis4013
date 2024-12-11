@@ -27,7 +27,7 @@ while ($author = $authors->fetch_assoc()) {
 <?php
 $authors = selectAuthors(); 
 while ($author = $authors->fetch_assoc()) {
-  echo "'" .$author['author_name'] . ", ";
+  echo "'" .$author['author_name'] . "', ";
 }
 ?> 
     ]
