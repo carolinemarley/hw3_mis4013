@@ -1,18 +1,13 @@
 <?php
-require_once("util-db.php");
-require_once("model-authors-chart.php");
+require_once("util-db.php");              // For DB connection
+require_once("model-authors-chart.php");   // For the selectAuthors() function
 
-$pageTitle = "Authors Chart";
+$pageTitle = "Authors Chart";              // Set the page title
+include "view-header.php";                 // Include the header
 
-// Fetch authors data before including the header or any views
-$authors = selectAuthors();
+$authors = selectAuthors();               // Now you can call selectAuthors()
 
-// Now, include the header, which can safely access the $authors variable
-include "view-header.php";
-
-// Include the page content
-include "page.php";
-
-// Include the footer
-include "view-footer.php";
+include "page.php";                       // Include the main content
+include "view-footer.php";                // Include the footer
 ?>
+
