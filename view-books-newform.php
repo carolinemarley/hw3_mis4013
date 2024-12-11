@@ -19,7 +19,7 @@
   <div class="mb-3">
     <label for="bTitle" class="form-label">Book Title</label>
 <?php
-$bookList = selectBookForInput(); 
+$bookList = selectBooksForInput(); 
 include "view-book-input-list.php"; 
 ?>
   </div>
