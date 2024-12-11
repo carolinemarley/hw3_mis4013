@@ -28,6 +28,9 @@
          <li class="nav-item">
           <a class="nav-link" href="authors-with-books.php">Authors with Books</a>
          </li>
+         <li class="nav-item">
+          <a class="nav-link" href="authors-chart.php">Authors Chart</a>
+         </li>
     </div>
   </div>
 </nav>
